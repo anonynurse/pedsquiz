@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Peds Quiz Runner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .category-select {
+            flex: 1;
+            text-align: center;
+        }
+
+        .category-select label {
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        #category {
+            padding: 6px 10px;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            min-width: 200px;
+        }
+
+        .score {
+            font-weight: 600;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .question-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        #questionText {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        #answers {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .answer-btn {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background: #f8fafc;
+            text-align: left;
+            font-size: 0.98rem;
+            cursor: pointer;
+            transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.1s ease;
+        }
+
+        .answer-btn:hover:not(:disabled) {
+            background: #e6f2ff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .answer-btn:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        .answer-btn.correct {
+            border-color: #22c55e;
+            background: #dcfce7;
+        }
+
+        .answer-btn.incorrect {
+            border-color: #ef4444;
+            background: #fee2e2;
+        }
+
+        .wrong-list {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            padding: 16px 20px;
+        }
+
+        .wrong-list h2 {
+            font-size: 1rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        #wrongQuestions {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 260px;
+            overflow-y: auto;
+        }
+
+        #wrongQuestions li {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e5e7eb;
+            font-size: 0.95rem;
+        }
+
+        #wrongQuestions li:last-child {
+            border-bottom: none;
+        }
+
+        #wrongQuestions strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        #wrongQuestions em {
+            font-style: normal;
+            color: #16a34a;
+        }
+
+        @media (max-width: 600px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .category-select {
+                text-align: left;
+            }
+
+            .score {
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <header class="top-bar">
+        <div class="category-select">
+            <label for="category">Category:</label>
+            <select id="category">
+                <!-- Populated dynamically -->
+            </select>
+        </div>
+        <div class="score" id="scoreDisplay">Score: 0 / 0</div>
+    </header>
+
+    <main>
+        <section class="question-card">
+            <div id="questionText">Loading questions…</div>
+            <div id="answers"></div>
+        </section>
+
+        <section class="wrong-list">
+            <h2>Review incorrect questions</h2>
+            <ul id="wrongQuestions"></ul>
+        </section>
+    </main>
+</div>
+
+<!-- Confetti library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+    const categorySelect = document.getElementById('category');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const questionText = document.getElementById('questionText');
+    const answersContainer = document.getElementById('answers');
+    const wrongList = document.getElementById('wrongQuestions');
+
+    let quizFiles = [];          // [{id, name, file}]
+    let quizData = {};           // id -> [questions]
+    let currentCategory = null;  // id or "__all__"
+    let currentQuestion = null;
+    let totalQuestions = 0;
+    let totalCorrect = 0;
+    let wrongQuestions = [];
+    let isLocked = false;
+
+    // Used so you don't get the same question 10 times in a row
+    let askedHistory = {};       // categoryKey -> Set(indices)
+
+    // Utility: shuffle array in place (Fisher–Yates)
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function updateScore() {
+        scoreDisplay.textContent = `Score: ${totalCorrect} / ${totalQuestions}`;
+    }
+
+    function renderWrongList() {
+        wrongList.innerHTML = "";
+        wrongQuestions.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <strong>Q${index + 1}:</strong> ${item.question}<br>
+                <em>Correct answer:</em> ${item.correctAnswer}
+            `;
+            wrongList.appendChild(li);
+        });
+    }
+
+    function getActiveQuestionPool() {
+        if (!quizFiles.length) return [];
+
+        if (currentCategory === "__all__") {
+            let pool = [];
+            quizFiles.forEach(file => {
+                const arr = quizData[file.id] || [];
+                arr.forEach(q => {
+                    pool.push({ ...q, __category: file.id });
+                });
+            });
+            return pool;
+        } else {
+            const arr = quizData[currentCategory] || [];
+            return arr.map(q => ({ ...q, __category: currentCategory }));
+        }
+    }
+
+    function pickNextQuestion() {
+        const pool = getActiveQuestionPool();
+        if (!pool.length) {
+            questionText.textContent = "No questions found for this category.";
+            answersContainer.innerHTML = "";
+            return;
+        }
+
+        const categoryKey = currentCategory || "__all__";
+        if (!askedHistory[categoryKey]) {
+            askedHistory[categoryKey] = new Set();
+        }
+        const history = askedHistory[categoryKey];
+
+        // Reset history if we've seen everything
+        if (history.size >= pool.length) {
+            history.clear();
+        }
+
+        let idx;
+        let tries = 0;
+        do {
+            idx = Math.floor(Math.random() * pool.length);
+            tries++;
+            if (tries > 20) break; // safety
+        } while (history.has(idx) && history.size < pool.length);
+
+        history.add(idx);
+        currentQuestion = pool[idx];
+        renderQuestion(currentQuestion);
+    }
+
+    function renderQuestion(q) {
+        questionText.textContent = q.question;
+        answersContainer.innerHTML = "";
+
+        // Build data structure with flags for correct answer
+        const options = q.options.map((text, index) => ({
+            text,
+            isCorrect: index === q.correctIndex
+        }));
+
+        const shuffled = shuffle(options.slice()); // shallow copy
+
+        shuffled.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = "answer-btn";
+            btn.textContent = opt.text;
+            btn.addEventListener('click', () => handleAnswerClick(btn, opt.isCorrect, q));
+            answersContainer.appendChild(btn);
+        });
+    }
+
+    function handleAnswerClick(buttonEl, isCorrect, question) {
+        if (isLocked) return;
+        isLocked = true;
+
+        const allButtons = Array.from(document.querySelectorAll('.answer-btn'));
+        totalQuestions++;
+
+        if (isCorrect) {
+            totalCorrect++;
+            buttonEl.classList.add('correct');
+            updateScore();
+
+            // Confetti on correct
+            if (typeof confetti === "function") {
+                confetti({
+                    spread: 90,
+                    startVelocity: 45,
+                    particleCount: 120,
+                    origin: { y: 0.6 }
+                });
+            }
+        } else {
+            buttonEl.classList.add('incorrect');
+            // Highlight correct answer in the set
+            const correctText = question.options[question.correctIndex];
+            allButtons.forEach(btn => {
+                if (btn.textContent === correctText) {
+                    btn.classList.add('correct');
+                }
+            });
+
+            wrongQuestions.push({
+                question: question.question,
+                correctAnswer: correctText
+            });
+            renderWrongList();
+            updateScore();
+        }
+
+        // Disable all answer buttons
+        allButtons.forEach(btn => btn.disabled = true);
+
+        // After 2 seconds, move on
+        setTimeout(() => {
+            isLocked = false;
+            pickNextQuestion();
+        }, 2000);
+    }
+
+    async function loadCategory(id, file) {
+        if (quizData[id]) return; // already loaded
+
+        const res = await fetch(file);
+        if (!res.ok) {
+            console.error(`Failed to load ${file}`);
+            return;
+        }
+        const data = await res.json();
+
+        // Support either { "questions": [...] } or just [ ... ]
+        quizData[id] = Array.isArray(data) ? data : (data.questions || []);
+    }
+
+    async function ensureCategoryQuestionsLoaded(categoryId) {
+        if (categoryId === "__all__") {
+            // Ensure all categories are loaded
+            await Promise.all(
+                quizFiles.map(f => loadCategory(f.id, f.file))
+            );
+        } else {
+            const file = quizFiles.find(f => f.id === categoryId);
+            if (file) {
+                await loadCategory(file.id, file.file);
+            }
+        }
+    }
+
+    async function onCategoryChange() {
+        currentCategory = categorySelect.value;
+        totalQuestions = 0;
+        totalCorrect = 0;
+        wrongQuestions = [];
+        askedHistory = {};
+        updateScore();
+        renderWrongList();
+
+        questionText.textContent = "Loading questions…";
+        answersContainer.innerHTML = "";
+
+        await ensureCategoryQuestionsLoaded(currentCategory);
+        pickNextQuestion();
+    }
+
+    function populateCategorySelect() {
+        categorySelect.innerHTML = "";
+
+        const allOption = document.createElement('option');
+        allOption.value = "__all__";
+        allOption.textContent = "All Categories";
+        categorySelect.appendChild(allOption);
+
+        quizFiles.forEach(file => {
+            const opt = document.createElement('option');
+            opt.value = file.id;
+            opt.textContent = file.name;
+            categorySelect.appendChild(opt);
+        });
+
+        categorySelect.addEventListener('change', onCategoryChange);
+
+        // Default to All
+        categorySelect.value = "__all__";
+        onCategoryChange();
+    }
+
+    async function init() {
+        try {
+            const res = await fetch('list_quizzes.php');
+            if (!res.ok) {
+                throw new Error("Could not load quiz list.");
+            }
+
+            quizFiles = await res.json(); // [{id, name, file}]
+            if (!Array.isArray(quizFiles) || quizFiles.length === 0) {
+                questionText.textContent = "No quiz files found. Add some .json files to the folder.";
+                return;
+            }
+
+            populateCategorySelect();
+        } catch (err) {
+            console.error(err);
+            questionText.textContent = "Error loading quizzes.";
+        }
+    }
+
+    init();
+</script>
+</body>
+</html>
