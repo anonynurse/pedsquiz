@@ -200,5 +200,205 @@
       ],
       "correctIndex": 0
     }
+    {
+      "question": "A 7-year-old in a long-leg cast after a tibia fracture reports increasing pain and tingling in the toes. The toes look pale. Which nursing diagnosis is the priority?",
+      "options": [
+        "Risk for peripheral neurovascular dysfunction related to constrictive cast",
+        "Anxiety related to unfamiliar hospital environment",
+        "Risk for impaired physical mobility related to musculoskeletal injury",
+        "Disturbed sleep pattern related to hospitalization"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A child with osteomyelitis is being discharged on long-term IV antibiotics via a PICC line at home. Which parent statement indicates effective teaching about a key nursing care priority?",
+      "options": [
+        "“If the bandage gets wet, we can leave it until the next home-care visit.”",
+        "“If our child develops fever or redness at the PICC site, we’ll call the provider right away.”",
+        "“If she seems better, we can stop the antibiotics a few days early.”",
+        "“We will flush the PICC only when it feels blocked.”"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A 9-year-old in skeletal traction for a femur fracture is at risk for impaired skin integrity. Which intervention best addresses this nursing diagnosis?",
+      "options": [
+        "Encouraging the child to sit upright in bed without changing position",
+        "Placing pillows directly under the traction ropes to reduce tension",
+        "Providing meticulous skin care and using a pressure-redistribution mattress",
+        "Removing the traction weights briefly every 4 hours to change linens"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A child is post-op day 1 from spinal fusion for scoliosis. Which nursing intervention has highest priority to prevent a serious complication?",
+      "options": [
+        "Encouraging favorite snacks from home to maintain calories",
+        "Assisting the child to sit on the edge of the bed with legs dangling",
+        "Changing the surgical dressing every 2 hours",
+        "Encouraging use of an incentive spirometer and performing frequent respiratory assessments"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A nurse is planning care for a 5-year-old with spastic cerebral palsy who has difficulty swallowing thin liquids. Which nursing intervention is most appropriate to address the risk for aspiration?",
+      "options": [
+        "Offer large volumes of fluid at each meal to reduce feeding time",
+        "Place the child supine during feeds to prevent fatigue",
+        "Provide thickened fluids and ensure the child is seated upright with good head control",
+        "Limit oral intake and provide most fluids via IV to prevent choking"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A nurse is caring for a newborn with a lumbosacral myelomeningocele awaiting surgical repair. Which nursing diagnosis is most important in the immediate preoperative period?",
+      "options": [
+        "Risk for deficient fluid volume related to NPO status",
+        "Risk for infection related to exposed neural tissue",
+        "Risk for delayed growth and development related to chronic condition",
+        "Disturbed body image related to visible defect"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "The nurse is providing teaching to parents of a toddler newly diagnosed with Duchenne muscular dystrophy. Which nursing diagnosis should guide early home care teaching?",
+      "options": [
+        "Ineffective breathing pattern related to chest wall deformity",
+        "Risk for injury related to progressive muscle weakness and frequent falls",
+        "Deficient fluid volume related to decreased oral intake",
+        "Risk for constipation related to immobility and opioid use"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A 13-year-old with juvenile idiopathic arthritis (JIA) has morning stiffness that improves throughout the day. Which nursing intervention is most appropriate for this symptom pattern?",
+      "options": [
+        "Instruct the child to avoid all exercise in the morning",
+        "Apply cold packs to affected joints immediately on awakening",
+        "Encourage warm showers and gentle range-of-motion exercises before school",
+        "Schedule complete bedrest until the stiffness resolves"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A child with cerebral palsy uses ankle–foot orthoses (AFOs) and a walker. The parent asks how to support the child’s mobility at home. Which intervention best reflects the nurse’s understanding of the child’s needs?",
+      "options": [
+        "Encourage the child to crawl instead of walking to conserve energy",
+        "Allow the child to walk only at school and use a wheelchair at home",
+        "Create safe, uncluttered walking paths and encourage short, frequent periods of ambulation",
+        "Remove the AFOs when the child is awake to prevent pressure injuries"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A 6-year-old in a hip spica cast has had poor appetite and little fluid intake for 2 days. Which nursing diagnosis is the priority?",
+      "options": [
+        "Imbalanced nutrition: less than body requirements related to decreased intake",
+        "Risk for impaired skin integrity related to cast and immobility",
+        "Risk for ineffective peripheral tissue perfusion related to cast pressure",
+        "Deficient knowledge (parental) related to cast care"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "The nurse is planning care for a child with osteomyelitis who reports severe pain at the affected limb despite scheduled analgesics. Which nursing intervention best addresses pain management?",
+      "options": [
+        "Discontinue analgesics and focus on nonpharmacologic measures only",
+        "Notify the provider, assess timing of analgesics, and consider multimodal pain strategies",
+        "Encourage the child to ignore the pain and focus on schoolwork",
+        "Apply ice continuously to the limb for 12 hours without interruption"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A school-age child is admitted for traction following a femur fracture. Which intervention best addresses the nursing diagnosis Disturbed body image?",
+      "options": [
+        "Limiting visitors until the child adjusts to the traction",
+        "Allowing the child to decorate the traction frame and choose clothing that fits over the equipment",
+        "Avoiding mirrors so the child does not see the traction apparatus",
+        "Telling the child that appearance is not important and will “go back to normal soon”"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "The nurse is planning priority education for parents of a child with myelomeningocele who will require intermittent catheterization at home. Which nursing diagnosis is most relevant?",
+      "options": [
+        "Risk for caregiver role strain related to complex home regimen",
+        "Deficient knowledge related to bladder management and infection prevention",
+        "Ineffective airway clearance related to neuromuscular weakness",
+        "Risk for imbalanced nutrition: more than body requirements"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A teenager with idiopathic scoliosis is struggling to adhere to wearing a TLSO brace. She states, “I feel ugly in this thing.” Which nursing intervention best addresses her psychosocial needs?",
+      "options": [
+        "Emphasize that she has no choice and must wear the brace",
+        "Avoid discussing the brace to minimize embarrassment",
+        "Explore her feelings, connect her with peer support, and help plan clothing options that conceal the brace",
+        "Tell her that “everyone in high school is self-conscious” and change the subject"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A child with spastic cerebral palsy has increased muscle tone and scissoring of the legs. Which nursing diagnosis is most appropriate?",
+      "options": [
+        "Risk for infection related to neuromuscular impairment",
+        "Ineffective thermoregulation related to muscle spasticity",
+        "Impaired physical mobility related to neuromuscular dysfunction",
+        "Deficient fluid volume related to increased muscle activity"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "The nurse is caring for a child with Duchenne muscular dystrophy who is becoming increasingly short of breath with mild exertion. Which intervention best addresses a respiratory-focused nursing diagnosis?",
+      "options": [
+        "Encourage the child to sleep flat without pillows to stretch the spine",
+        "Cluster physical care so the child spends long periods out of bed",
+        "Teach energy conservation, encourage use of cough-assist techniques, and elevate the head of the bed",
+        "Restrict the child’s fluid intake to reduce pulmonary congestion"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A child with JIA is hospitalized for an acute flare. Which nursing intervention best supports the diagnosis Activity intolerance related to joint pain and fatigue?",
+      "options": [
+        "Plan care with alternating rest and activity periods throughout the day",
+        "Encourage the child to remain on strict bedrest until pain fully resolves",
+        "Schedule all activities together in the morning to “get them over with”",
+        "Discourage participation in any physical or play activities while hospitalized"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A preschooler in a hip spica cast has been less talkative and refuses to participate in play. Which nursing intervention best addresses the nursing diagnosis Risk for delayed growth and development?",
+      "options": [
+        "Limit stimulation and keep the room quiet so the child can rest",
+        "Provide age-appropriate play activities that can be done in bed and involve caregivers in play",
+        "Focus on physical care only; postpone play until the cast is removed",
+        "Encourage the child to watch television most of the day to prevent boredom"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "The nurse suspects developing compartment syndrome in a child with a tight circumferential cast. After notifying the provider, which nursing action is most appropriate while awaiting further orders?",
+      "options": [
+        "Elevate the extremity above the level of the heart to reduce swelling",
+        "Apply a heating pad directly over the cast to promote vasodilation",
+        "Keep the extremity at heart level, loosen restrictive dressings, and reassess neurovascular status frequently",
+        "Encourage the child to bear weight to improve circulation to the limb"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A child with known latex allergy and myelomeningocele is admitted for surgery. Which nursing intervention best addresses the nursing diagnosis Risk for allergic reaction related to latex exposure?",
+      "options": [
+        "Place a “No dairy products” sign on the door",
+        "Use only non-latex equipment and avoid latex-containing toys and gloves in the room",
+        "Restrict the child’s visitors to reduce infection risk",
+        "Avoid administering any immunizations during this admission"
+      ],
+      "correctIndex": 1
+    }
   ]
 }
