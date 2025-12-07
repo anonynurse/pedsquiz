@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "question": "A child presents with a painful, swollen knee after a minor fall. The x-ray shows a spiral fracture of the tibia. Which concern must the nurse keep in mind?",
+      "options": [
+        "This injury pattern may be associated with non-accidental trauma",
+        "Spiral fractures always indicate osteogenesis imperfecta",
+        "This injury requires immediate surgical fixation in all cases",
+        "This fracture pattern usually heals poorly and leads to permanent disability"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Which nursing intervention is most important when caring for a child in skeletal traction?",
+      "options": [
+        "Encouraging the child to remove weights briefly to reposition",
+        "Ensuring weights hang freely and are not resting on the floor",
+        "Frequently adjusting the amount of weight based on the child’s pain",
+        "Placing the bed in high Fowler’s position at all times"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
