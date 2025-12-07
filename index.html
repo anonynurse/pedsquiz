@@ -47,7 +47,7 @@
             font-size: 1rem;
             border-radius: 6px;
             border: 1px solid #ccc;
-            min-width: 200px;
+            min-width: 220px;
         }
 
         .score {
@@ -171,9 +171,7 @@
     <header class="top-bar">
         <div class="category-select">
             <label for="category">Category:</label>
-            <select id="category">
-                <!-- Populated dynamically -->
-            </select>
+            <select id="category"></select>
         </div>
         <div class="score" id="scoreDisplay">Score: 0 / 0</div>
     </header>
@@ -201,7 +199,36 @@
     const answersContainer = document.getElementById('answers');
     const wrongList = document.getElementById('wrongQuestions');
 
-    let quizFiles = [];          // [{id, name, file}]
+    // --- HARD-CODED CATEGORIES + JSON FILES (GitHub-friendly) ---
+    // Make sure these filenames match what you actually commit.
+    const quizFiles = [
+        {
+            id: "musculoskeletal_neuromuscular",
+            name: "Musculoskeletal / Neuromuscular",
+            file: "musculoskeletal_neuromuscular.json"
+        },
+        {
+            id: "neurological",
+            name: "Neurological",
+            file: "neurological.json"
+        },
+        {
+            id: "endocrine_integumentary",
+            name: "Endocrine / Integumentary",
+            file: "endocrine_integumentary.json"
+        },
+        {
+            id: "hematological",
+            name: "Hematological",
+            file: "hematological.json"
+        },
+        {
+            id: "cancer",
+            name: "Cancer",
+            file: "cancer.json"
+        }
+    ];
+
     let quizData = {};           // id -> [questions]
     let currentCategory = null;  // id or "__all__"
     let currentQuestion = null;
@@ -210,7 +237,7 @@
     let wrongQuestions = [];
     let isLocked = false;
 
-    // Used so you don't get the same question 10 times in a row
+    // Avoid hammering the same question repeatedly
     let askedHistory = {};       // categoryKey -> Set(indices)
 
     // Utility: shuffle array in place (Fisher–Yates)
@@ -270,7 +297,6 @@
         }
         const history = askedHistory[categoryKey];
 
-        // Reset history if we've seen everything
         if (history.size >= pool.length) {
             history.clear();
         }
@@ -280,7 +306,7 @@
         do {
             idx = Math.floor(Math.random() * pool.length);
             tries++;
-            if (tries > 20) break; // safety
+            if (tries > 20) break;
         } while (history.has(idx) && history.size < pool.length);
 
         history.add(idx);
@@ -292,13 +318,12 @@
         questionText.textContent = q.question;
         answersContainer.innerHTML = "";
 
-        // Build data structure with flags for correct answer
         const options = q.options.map((text, index) => ({
             text,
             isCorrect: index === q.correctIndex
         }));
 
-        const shuffled = shuffle(options.slice()); // shallow copy
+        const shuffled = shuffle(options.slice());
 
         shuffled.forEach(opt => {
             const btn = document.createElement('button');
@@ -321,7 +346,6 @@
             buttonEl.classList.add('correct');
             updateScore();
 
-            // Confetti on correct
             if (typeof confetti === "function") {
                 confetti({
                     spread: 90,
@@ -332,7 +356,7 @@
             }
         } else {
             buttonEl.classList.add('incorrect');
-            // Highlight correct answer in the set
+
             const correctText = question.options[question.correctIndex];
             allButtons.forEach(btn => {
                 if (btn.textContent === correctText) {
@@ -348,10 +372,8 @@
             updateScore();
         }
 
-        // Disable all answer buttons
         allButtons.forEach(btn => btn.disabled = true);
 
-        // After 2 seconds, move on
         setTimeout(() => {
             isLocked = false;
             pickNextQuestion();
@@ -359,22 +381,23 @@
     }
 
     async function loadCategory(id, file) {
-        if (quizData[id]) return; // already loaded
+        if (quizData[id]) return;
 
-        const res = await fetch(file);
-        if (!res.ok) {
-            console.error(`Failed to load ${file}`);
-            return;
+        try {
+            const res = await fetch(file);
+            if (!res.ok) {
+                console.error(`Failed to load ${file}`);
+                return;
+            }
+            const data = await res.json();
+            quizData[id] = Array.isArray(data) ? data : (data.questions || []);
+        } catch (e) {
+            console.error("Error loading JSON for", id, e);
         }
-        const data = await res.json();
-
-        // Support either { "questions": [...] } or just [ ... ]
-        quizData[id] = Array.isArray(data) ? data : (data.questions || []);
     }
 
     async function ensureCategoryQuestionsLoaded(categoryId) {
         if (categoryId === "__all__") {
-            // Ensure all categories are loaded
             await Promise.all(
                 quizFiles.map(f => loadCategory(f.id, f.file))
             );
@@ -419,29 +442,16 @@
 
         categorySelect.addEventListener('change', onCategoryChange);
 
-        // Default to All
         categorySelect.value = "__all__";
         onCategoryChange();
     }
 
-    async function init() {
-        try {
-            const res = await fetch('list_quizzes.php');
-            if (!res.ok) {
-                throw new Error("Could not load quiz list.");
-            }
-
-            quizFiles = await res.json(); // [{id, name, file}]
-            if (!Array.isArray(quizFiles) || quizFiles.length === 0) {
-                questionText.textContent = "No quiz files found. Add some .json files to the folder.";
-                return;
-            }
-
-            populateCategorySelect();
-        } catch (err) {
-            console.error(err);
-            questionText.textContent = "Error loading quizzes.";
+    function init() {
+        if (!quizFiles.length) {
+            questionText.textContent = "No quiz files configured.";
+            return;
         }
+        populateCategorySelect();
     }
 
     init();
