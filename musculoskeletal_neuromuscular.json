@@ -1,24 +1,204 @@
 {
   "questions": [
     {
-      "question": "A child presents with a painful, swollen knee after a minor fall. The x-ray shows a spiral fracture of the tibia. Which concern must the nurse keep in mind?",
+      "question": "A 10-year-old has been on strict bedrest for 9 days after a spinal injury. Which complication of immobilization are you most directly trying to prevent with regular active and passive range-of-motion exercises?",
       "options": [
-        "This injury pattern may be associated with non-accidental trauma",
-        "Spiral fractures always indicate osteogenesis imperfecta",
-        "This injury requires immediate surgical fixation in all cases",
-        "This fracture pattern usually heals poorly and leads to permanent disability"
+        "Increased bone density",
+        "Enhanced cardiac output",
+        "Contractures and joint stiffness",
+        "Improved fine motor coordination"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A 6-year-old in a long-leg cast after a femur fracture suddenly complains of severe pain in the casted leg. The leg looks pale and feels cool; the child refuses to move the toes. What is the priority action?",
+      "options": [
+        "Notify the provider immediately to assess for compartment syndrome",
+        "Elevate the leg on pillows and reassess in 30 minutes",
+        "Offer distraction and non-pharmacologic pain measures",
+        "Apply a warm pack to improve local circulation"
       ],
       "correctIndex": 0
     },
     {
-      "question": "Which nursing intervention is most important when caring for a child in skeletal traction?",
+      "question": "A 7-year-old presents with an acutely swollen, painful ankle after a soccer injury. An X-ray shows no fracture. Which initial management is most appropriate?",
       "options": [
-        "Encouraging the child to remove weights briefly to reposition",
-        "Ensuring weights hang freely and are not resting on the floor",
-        "Frequently adjusting the amount of weight based on the child’s pain",
-        "Placing the bed in high Fowler’s position at all times"
+        "Apply a warm moist compress and encourage early weight bearing",
+        "Begin active range-of-motion exercises within 30 minutes of injury",
+        "Splint the ankle only if the pain persists beyond 24 hours",
+        "Use protection, rest, ice, compression, and elevation of the ankle"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "When comparing fractures in children versus adults, which statement is most accurate?",
+      "options": [
+        "Children’s bones heal more slowly because of their open growth plates",
+        "Children have a thicker periosteum, leading to more rapid bone healing",
+        "Children’s bones are less vascular, so they are at lower risk for infection",
+        "Children rarely experience greenstick fractures due to bone flexibility"
       ],
       "correctIndex": 1
+    },
+    {
+      "question": "A 3-year-old in a hip spica cast is being discharged. Which home care teaching is most important to emphasize to the parents?",
+      "options": [
+        "Use talcum powder inside the cast to keep the skin dry",
+        "Loosen the cast with a hairdryer on cool if the child is uncomfortable",
+        "Protect the cast from urine and stool with careful diapering and check the skin frequently",
+        "Remove the cast briefly each day to inspect the underlying skin"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A child with suspected osteomyelitis of the femur is admitted. Which assessment finding is most consistent with acute osteomyelitis?",
+      "options": [
+        "Painless limb with full range of motion and normal temperature",
+        "Generalized pruritus and scleral jaundice",
+        "Petechiae over the extremities with mucosal bleeding",
+        "Localized bone pain, warmth over the site, fever, and irritability"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "The plan of care for a child with osteomyelitis includes long-term antimicrobial therapy. Which nursing action is most appropriate?",
+      "options": [
+        "Encourage full weight bearing to promote bone healing as soon as pain decreases",
+        "Administer IV antibiotics via a PICC line and monitor renal and hepatic function",
+        "Switch to oral antibiotics as soon as the child’s pain is controlled",
+        "Discontinue antibiotics once the child has been afebrile for 24 hours"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A 12-year-old with scoliosis has been prescribed a thoracolumbosacral orthosis (TLSO) brace. Which teaching point best promotes treatment effectiveness?",
+      "options": [
+        "Wear the brace as prescribed each day and continue normal school and social activities",
+        "Wear the brace only when back pain becomes severe",
+        "Remove the brace whenever you are sitting to prevent pressure areas",
+        "Expect the brace to permanently cure your scoliosis without further follow-up"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A 10-year-old is scheduled for spinal fusion with instrumentation for severe scoliosis. In the immediate postoperative period, which assessment is the priority?",
+      "options": [
+        "Oral intake and return of bowel sounds",
+        "Pain level and need for additional opioids",
+        "Ability to sit unsupported at the bedside",
+        "Neurovascular checks of the lower extremities and monitoring respiratory status"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A child with juvenile idiopathic arthritis (JIA) is starting on a treatment regimen that includes NSAIDs and possibly methotrexate. What is the primary overall goal of therapy?",
+      "options": [
+        "Cure the disease and prevent any recurrence of joint symptoms",
+        "Control pain, preserve joint function, and promote normal growth and development",
+        "Restrict activity to minimize fatigue and protect joints from further injury",
+        "Avoid medications altogether to prevent long-term adverse effects"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "The nurse teaches parents of a child with JIA about home care. Which statement indicates correct understanding?",
+      "options": [
+        "“We’ll encourage regular exercise, use warm baths, and keep splints on as prescribed.”",
+        "“We’ll avoid all heat and use only ice packs when the joints hurt.”",
+        "“We’ll stop the medications as soon as she seems better for a few days.”",
+        "“We’ll keep her in bed as much as possible to protect her joints.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A 9-month-old infant is being evaluated for possible cerebral palsy. Which finding is most concerning?",
+      "options": [
+        "Startle response with loud noises",
+        "Stranger anxiety and crying when separated from parents",
+        "Persistent head lag and clenched fists beyond 4 months of age",
+        "Ability to sit unsupported and transfer objects hand to hand"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "When explaining cerebral palsy (CP) to parents, which description is most accurate?",
+      "options": [
+        "“It is a progressive muscle disease that will steadily worsen over time.”",
+        "“It is a nonprogressive motor disorder caused by a lesion or anomaly in the developing brain.”",
+        "“It is an autoimmune disease that causes intermittent episodes of paralysis.”",
+        "“It always causes severe intellectual disability that cannot be improved.”"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A newborn is diagnosed with a myelomeningocele in the lumbosacral area. Before surgical repair, which nursing intervention has the highest priority?",
+      "options": [
+        "Place the infant in a supine position to optimize airway management",
+        "Apply a dry dressing to the sac and leave it open to air to promote drying",
+        "Begin vigorous passive range-of-motion exercises of the lower extremities",
+        "Position the infant prone with hips slightly flexed and cover the sac with moist, sterile dressings"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "The nurse caring for an infant with myelomeningocele includes latex precautions in the plan of care. What is the best rationale?",
+      "options": [
+        "Latex is never used in pediatric care because it always causes skin breakdown",
+        "Only infants with a positive skin test for latex allergy require latex precautions",
+        "Children with myelomeningocele have a high risk of developing severe latex allergy from repeated early exposure",
+        "Latex precautions are necessary only if the child has a family history of atopy or asthma"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A 4-year-old boy is being evaluated for Duchenne muscular dystrophy (DMD). Which finding is most characteristic of DMD?",
+      "options": [
+        "Waddling gait, frequent falls, and using hands to “walk up” the thighs to stand",
+        "Spasticity and scissoring of the legs during walking",
+        "Intention tremor with ataxic gait and nystagmus",
+        "Sudden onset of flaccid paralysis and loss of all reflexes"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "The primary goal of therapy for a child with Duchenne muscular dystrophy is to:",
+      "options": [
+        "Reverse muscle degeneration with high-dose corticosteroids",
+        "Prevent all physical activity to protect remaining muscle fibers",
+        "Achieve complete cure through early orthopedic surgery",
+        "Maintain function in unaffected muscles and keep the child active as long as possible"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A nurse is planning care for a child with spastic cerebral palsy that affects mobility. Which intervention best supports mobility and function?",
+      "options": [
+        "Encouraging complete bedrest with only passive range of motion",
+        "Avoiding orthotics or splints to reduce the risk of pressure injuries",
+        "Using physical therapy, assistive devices, and stretching to maximize independence",
+        "Withholding activities that require energy expenditure to minimize fatigue"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A 9-year-old child is newly admitted with a femur fracture and is placed in skeletal traction. Which nursing action is most appropriate?",
+      "options": [
+        "Place the traction weights on the bed when the child complains of pain",
+        "Ensure the weights hang freely and maintain proper body alignment",
+        "Allow the child to adjust the ropes and pulleys for comfort",
+        "Remove the weights briefly during bathing and toileting"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A nurse is caring for several immobilized children on the unit. Which intervention is most appropriate to prevent venous stasis and venous thromboembolism (VTE)?",
+      "options": [
+        "Apply anti-embolic stockings and encourage active movement of unaffected limbs",
+        "Restrict oral fluids to prevent edema and fluid overload",
+        "Elevate only the head of the bed to 90 degrees at all times",
+        "Massage the calves firmly to improve venous return"
+      ],
+      "correctIndex": 0
     }
   ]
 }
