@@ -200,11 +200,12 @@
     const wrongList = document.getElementById('wrongQuestions');
 
     // --- HARD-CODED CATEGORIES + JSON FILES ---
+    // Make sure "file" entries match your actual filenames.
     const quizFiles = [
         {
             id: "musculoskeletal_neuromuscular",
             name: "Musculoskeletal / Neuromuscular",
-            file: "musculoskeletal_neuromuscular.json"
+            file: "musculoskeletal - neuromuscular.json"
         },
         {
             id: "neurological",
@@ -283,6 +284,7 @@
     function pickNextQuestion() {
         const pool = getActiveQuestionPool();
         if (!pool.length) {
+            console.warn("No questions found for category:", currentCategory);
             questionText.textContent = "No questions found for this category.";
             answersContainer.innerHTML = "";
             return;
@@ -381,15 +383,17 @@
         if (quizData[id]) return;
 
         try {
+            console.log("Loading quiz file:", file);
             const res = await fetch(file);
             if (!res.ok) {
-                console.error(`Failed to load ${file}`);
+                console.error(`Failed to load ${file}:`, res.status, res.statusText);
                 quizData[id] = [];
                 return;
             }
             const data = await res.json();
             const questions = Array.isArray(data) ? data : (data.questions || []);
             quizData[id] = questions;
+            console.log(`Loaded ${file}: ${questions.length} questions`);
         } catch (e) {
             console.error("Error loading JSON for", id, e);
             quizData[id] = [];
@@ -460,16 +464,13 @@
             return;
         }
 
-        // Preload all categories so we can count questions
-        await Promise.all(
-            quizFiles.map(f => loadCategory(f.id, f.file))
-        );
-
-        // Build counts
-        quizFiles.forEach(f => {
+        // Preload each file and record its question count
+        for (const f of quizFiles) {
+            await loadCategory(f.id, f.file);
             const arr = quizData[f.id] || [];
             questionCounts[f.id] = arr.length;
-        });
+            console.log(`Category '${f.name}' has ${arr.length} questions`);
+        }
 
         populateCategorySelect();
     }
