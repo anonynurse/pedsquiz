@@ -47,7 +47,7 @@
             font-size: 1rem;
             border-radius: 6px;
             border: 1px solid #ccc;
-            min-width: 220px;
+            min-width: 260px;
         }
 
         .score {
@@ -199,8 +199,7 @@
     const answersContainer = document.getElementById('answers');
     const wrongList = document.getElementById('wrongQuestions');
 
-    // --- HARD-CODED CATEGORIES + JSON FILES (GitHub-friendly) ---
-    // Make sure these filenames match what you actually commit.
+    // --- HARD-CODED CATEGORIES + JSON FILES ---
     const quizFiles = [
         {
             id: "musculoskeletal_neuromuscular",
@@ -230,17 +229,15 @@
     ];
 
     let quizData = {};           // id -> [questions]
+    let questionCounts = {};     // id -> number of questions
     let currentCategory = null;  // id or "__all__"
     let currentQuestion = null;
     let totalQuestions = 0;
     let totalCorrect = 0;
     let wrongQuestions = [];
     let isLocked = false;
-
-    // Avoid hammering the same question repeatedly
     let askedHistory = {};       // categoryKey -> Set(indices)
 
-    // Utility: shuffle array in place (Fisher–Yates)
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -387,12 +384,15 @@
             const res = await fetch(file);
             if (!res.ok) {
                 console.error(`Failed to load ${file}`);
+                quizData[id] = [];
                 return;
             }
             const data = await res.json();
-            quizData[id] = Array.isArray(data) ? data : (data.questions || []);
+            const questions = Array.isArray(data) ? data : (data.questions || []);
+            quizData[id] = questions;
         } catch (e) {
             console.error("Error loading JSON for", id, e);
+            quizData[id] = [];
         }
     }
 
@@ -428,15 +428,23 @@
     function populateCategorySelect() {
         categorySelect.innerHTML = "";
 
+        // All Categories option with total count
+        const allCount = quizFiles.reduce((sum, f) => {
+            const arr = quizData[f.id] || [];
+            return sum + arr.length;
+        }, 0);
+
         const allOption = document.createElement('option');
         allOption.value = "__all__";
-        allOption.textContent = "All Categories";
+        allOption.textContent = `All Categories (${allCount})`;
         categorySelect.appendChild(allOption);
 
+        // Individual categories with per-file counts
         quizFiles.forEach(file => {
+            const count = questionCounts[file.id] || 0;
             const opt = document.createElement('option');
             opt.value = file.id;
-            opt.textContent = file.name;
+            opt.textContent = `${file.name} (${count})`;
             categorySelect.appendChild(opt);
         });
 
@@ -446,11 +454,23 @@
         onCategoryChange();
     }
 
-    function init() {
+    async function init() {
         if (!quizFiles.length) {
             questionText.textContent = "No quiz files configured.";
             return;
         }
+
+        // Preload all categories so we can count questions
+        await Promise.all(
+            quizFiles.map(f => loadCategory(f.id, f.file))
+        );
+
+        // Build counts
+        quizFiles.forEach(f => {
+            const arr = quizData[f.id] || [];
+            questionCounts[f.id] = arr.length;
+        });
+
         populateCategorySelect();
     }
 
