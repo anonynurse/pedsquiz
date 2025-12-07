@@ -1,1 +1,304 @@
-
+{
+  "questions": [
+    {
+      "question": "A 4-year-old with newly diagnosed acute lymphoblastic leukemia (ALL) has pallor, frequent nosebleeds, and recurrent infections. These manifestations are most directly related to which pathophysiologic effect?",
+      "options": [
+        "Hypertension, bradycardia, and hypothermia",
+        "Polyuria, polydipsia, and polyphagia",
+        "Anemia, neutropenia, and thrombocytopenia from bone marrow failure",
+        "Weight gain, edema, and moon face from steroid therapy"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A child with ALL is being discussed on rounds. Which factor is considered favorable for prognosis?",
+      "options": [
+        "Age at diagnosis less than 1 year",
+        "Age between 2 and 10 years at diagnosis",
+        "Initial white blood cell count greater than 100,000/mm³",
+        "T-cell immunophenotype and CNS involvement at diagnosis"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A child with leukemia is scheduled to receive the first dose of IV chemotherapy through an implanted port. Which nursing action is the priority before starting the infusion?",
+      "options": [
+        "Allow the child to eat a large meal to avoid nausea",
+        "Assess for blood return and ensure patency of the central line",
+        "Apply topical anesthetic cream after the infusion has begun",
+        "Offer the family a tour of the oncology unit for orientation"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A 6-year-old with leukemia has an absolute neutrophil count (ANC) of 300/mm³. The provider writes several orders. Which order should the nurse question?",
+      "options": [
+        "Place the child in a private room",
+        "Monitor temperature at least every 4 hours",
+        "Avoid fresh flowers and potted plants in the room",
+        "Obtain rectal temperatures every 4 hours to monitor for fever"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A child receiving chemotherapy has a platelet count of 18,000/mm³ and suddenly develops a nosebleed. Which nursing action is most appropriate?",
+      "options": [
+        "Pack the nares firmly with cotton-tipped applicators",
+        "Tilt the head back and check the throat for blood",
+        "Apply continuous pressure to the soft part of the nose and keep the head forward",
+        "Administer an NSAID for discomfort and recheck in 30 minutes"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "The parent of a child receiving chemotherapy says, “He always vomits right after treatment.” Which statement by the nurse shows correct teaching about antiemetic use?",
+      "options": [
+        "“We’ll give the anti-nausea medication before chemotherapy and at scheduled times afterward.”",
+        "“We only give anti-nausea medicine if your child actually vomits.”",
+        "“We’ll wait until he stops eating and drinking, then give the medication.”",
+        "“We avoid medications for nausea because they interfere with chemotherapy.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A child on chemotherapy develops painful oral mucositis. Which nursing intervention is most appropriate?",
+      "options": [
+        "Use a soft toothbrush or sponge, offer bland rinses, and avoid alcohol-based mouthwashes",
+        "Encourage frequent toothbrushing with a firm-bristled brush after each meal",
+        "Offer citrus juices to stimulate saliva and cleanse the mouth",
+        "Use lemon-glycerin swabs every 2 hours to cleanse the mucosa"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A child with Burkitt lymphoma is at high risk for tumor lysis syndrome. Which lab pattern would the nurse recognize as most consistent with this complication?",
+      "options": [
+        "Decreased uric acid, hypokalemia, hypophosphatemia, hypercalcemia",
+        "Elevated uric acid, hyperkalemia, hyperphosphatemia, and hypocalcemia",
+        "Normal electrolytes but elevated liver enzymes and bilirubin",
+        "Hyponatremia, hypokalemia, and metabolic alkalosis"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A child with ALL is receiving high-dose corticosteroids as part of induction therapy. Which parent statement indicates correct understanding of expected side effects?",
+      "options": [
+        "“We should expect significant hair loss while she is on steroids.”",
+        "“We’ll watch for increased appetite, weight gain, mood changes, and high blood sugar.”",
+        "“Steroids will mostly cause diarrhea and dehydration.”",
+        "“These drugs will only cause drowsiness, so we should keep her very active.”"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "The parents of a child newly diagnosed with leukemia say, “We feel like this is our fault somehow.” Which nursing response is most therapeutic?",
+      "options": [
+        "“You shouldn’t feel guilty; many families feel this way.”",
+        "“There is nothing you did to cause this; would you like to talk more about what you’re feeling?”",
+        "“Let’s focus on the treatment now instead of what caused it.”",
+        "“If you had noticed the symptoms sooner, we might have caught it earlier.”"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A 3-year-old is admitted with a suspected Wilms tumor. Which nursing action is the priority?",
+      "options": [
+        "Measure abdominal girth every shift with the child supine",
+        "Avoid palpating the abdomen during assessment",
+        "Encourage deep palpation to better define the tumor margins",
+        "Place a heating pad over the abdomen to relieve pain"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A child is diagnosed with a Wilms tumor in the left kidney. The parent asks about preoperative care. Which instruction is most important for the nurse to reinforce with the staff?",
+      "options": [
+        "“Encourage the child to ambulate as much as possible.”",
+        "“Offer high-protein meals to promote healing.”",
+        "“Monitor urine output strictly every 8 hours.”",
+        "“Post a sign above the bed stating: ‘Do NOT palpate abdomen.’”"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A toddler is diagnosed with neuroblastoma, and the parents ask what this means. Which explanation is most accurate?",
+      "options": [
+        "“It is a benign tumor that usually remains localized in the brain.”",
+        "“This is a tumor of the kidney that is typically found early.”",
+        "“It always presents with painless lymph node enlargement in the neck.”",
+        "“It is a tumor of the sympathetic nervous system that often presents with an abdominal mass.”"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A school-age child had surgical resection of a posterior fossa brain tumor. Which postoperative assessment finding would be most concerning?",
+      "options": [
+        "Mild headache relieved with acetaminophen",
+        "Slight decrease in appetite on the first postoperative day",
+        "Repeated vomiting and complaints of a severe headache",
+        "Sleepiness immediately after receiving opioid analgesia"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A nurse is monitoring a child with a brain tumor for increased intracranial pressure (ICP). Which set of findings is most consistent with late signs of increased ICP?",
+      "options": [
+        "High-pitched cry, bulging fontanel, and irritability",
+        "Headache, vomiting, and blurred vision",
+        "Bradycardia, irregular respirations, and increased systolic blood pressure",
+        "Fever, neck stiffness, and photophobia"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A teen is diagnosed with Hodgkin lymphoma. Which assessment finding is most characteristic of this disease?",
+      "options": [
+        "Diffuse involvement of the bone marrow at diagnosis",
+        "Rapidly growing abdominal mass with bowel obstruction",
+        "Generalized petechiae and mucosal bleeding",
+        "Painless, firm cervical lymphadenopathy often accompanied by night sweats and fever"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "The nurse is teaching a family about the significance of “B symptoms” (fever, night sweats, weight loss) in Hodgkin lymphoma. Which statement by the parent indicates correct understanding?",
+      "options": [
+        "“Those symptoms are important because they can indicate a more advanced disease and affect treatment planning.”",
+        "“Those symptoms only mean our child has a viral infection.”",
+        "“These symptoms guarantee that our child is cured more quickly.”",
+        "“These symptoms mean that chemotherapy will not be effective.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A 14-year-old with suspected osteosarcoma reports persistent localized pain in the right leg that is worse at night and after activity. X-ray suggests a lesion. Where is osteosarcoma most commonly located?",
+      "options": [
+        "Diaphysis of the small bones of the hands",
+        "Metaphysis of long bones, especially around the knee",
+        "Skull bones near the cranial sutures",
+        "Vertebral bodies of the lumbar spine"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A 15-year-old had an above-knee amputation for osteosarcoma. Which nursing diagnosis is the highest priority in the immediate postoperative period?",
+      "options": [
+        "Disturbed body image related to loss of limb",
+        "Deficient knowledge related to prosthetic use",
+        "Acute pain related to surgical procedure and possible phantom pain",
+        "Risk for constipation related to opioid use and immobility"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "The nurse is providing teaching to the parents of a child with retinoblastoma. Which statement reflects understanding of a common early sign?",
+      "options": [
+        "“We noticed a white reflex in the pupil on flash photographs.”",
+        "“Our child has had constant watery drainage from both eyes.”",
+        "“The eyelids are swollen and red with thick discharge.”",
+        "“He complains of eye pain only when watching television.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A child with leukemia has a central venous line and develops a temperature of 39.2°C, chills, and malaise. Which nursing action has the highest priority?",
+      "options": [
+        "Administer acetaminophen and reassess temperature in 2 hours",
+        "Encourage oral fluids and rest in bed",
+        "Obtain ordered blood cultures from all lumens and start broad-spectrum antibiotics promptly",
+        "Remove the central line immediately at the bedside"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "A 5-year-old with leukemia and severe thrombocytopenia is on the pediatric unit. Which play activity is safest?",
+      "options": [
+        "Riding a tricycle in the hallway",
+        "Playing soccer in the playroom with other children",
+        "Participating in roughhousing on the floor with siblings",
+        "Quiet board games or drawing at the bedside"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "The parents of a school-age child undergoing maintenance chemotherapy ask if their child can return to school. Which response by the nurse is most appropriate?",
+      "options": [
+        "“Yes, many children can attend school with precautions; we’ll work with the team and school to plan for safety and fatigue.”",
+        "“No, your child must be homeschooled until all treatment is completed.”",
+        "“Your child can go to school only if no classmates are sick.”",
+        "“School attendance is discouraged because it interferes with treatment.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "During a follow-up visit after completion of therapy for childhood cancer, the family asks why long-term follow-up is necessary. Which explanation is best?",
+      "options": [
+        "“We mainly need to check that the central line is still functioning well.”",
+        "“We only follow children closely if we think the cancer will come back soon.”",
+        "“It is required for research and doesn’t really affect your child’s care.”",
+        "“Some treatments can cause late effects, such as learning difficulties, heart problems, or second cancers, so regular follow-up is important.”"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A child with relapsed leukemia is now receiving palliative care. Which nursing statement best reflects the philosophy of pediatric palliative care?",
+      "options": [
+        "“Our goal is to focus on your child’s comfort and quality of life while supporting your family’s wishes.”",
+        "“Palliative care means we will stop all medications, including pain medicines.”",
+        "“Palliative care is only for the last few hours of life.”",
+        "“We will no longer discuss your child’s care plan with you to reduce stress.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "The parent of a child receiving intensive chemotherapy asks about routine vaccinations. Which response by the nurse is most appropriate?",
+      "options": [
+        "“We should give all vaccines on schedule to keep your child fully protected.”",
+        "“Most vaccines will be delayed during intensive chemotherapy; we’ll plan catch-up immunizations when the immune system recovers.”",
+        "“Only live vaccines are safe during chemotherapy.”",
+        "“Your child will never be able to receive vaccines again.”"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "A 6-year-old with leukemia is severely immunocompromised. The child’s sibling is scheduled to receive a live attenuated varicella vaccine. What should the nurse tell the parents?",
+      "options": [
+        "“The sibling must not receive the vaccine because it will harm your child with leukemia.”",
+        "“You should delay all vaccines for the sibling until chemotherapy is completed.”",
+        "“If the sibling develops a fever after the vaccine, your child is fully protected.”",
+        "“The sibling can receive the vaccine, but report any post-vaccine rash or illness so we can assess risk to your child.”"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "A child with leukemia and profound neutropenia (ANC 200/mm³) is being discharged home. Which parent statement indicates effective teaching?",
+      "options": [
+        "“We will avoid crowded places, monitor his temperature closely, and call right away if he has a fever.”",
+        "“We’ll encourage him to eat fresh salad and raw fruits every day to stay healthy.”",
+        "“We’ll allow him to play in the garden soil if he wears gloves.”",
+        "“He can continue to share drinks and utensils with his siblings as long as they feel well.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A preschool child with leukemia is scheduled for a bone marrow aspiration. Which nursing intervention best promotes atraumatic care?",
+      "options": [
+        "Apply topical anesthetic cream to the site before the procedure and use age-appropriate distraction techniques",
+        "Delay all explanations of the procedure until the child is on the table",
+        "Ask the parents to remain outside the room to reduce the child’s anxiety",
+        "Avoid using pain medication so the provider can assess the child’s baseline response"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "A child receiving chemotherapy is anemic and fatigued. Which nursing intervention is most appropriate to address activity intolerance?",
+      "options": [
+        "Encourage the child to participate in all activities to “build stamina.”",
+        "Restrict all play and visitors to prevent exhaustion.",
+        "Plan care to include rest periods between activities and prioritize important tasks when the child has the most energy.",
+        "Avoid discussing fatigue with the family to prevent worry."
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
